@@ -12,6 +12,7 @@
 ### Ставим percona-server-57
 
 [root@master ~]# sudo yum install https://repo.percona.com/yum/percona-release-latest.noarch.rpm -y
+
 [root@master ~]# yum install Percona-Server-server-57 -y
 
 ### Копируем конфиги из /vagrant/conf.d в /etc/my.cnf.d/
@@ -22,7 +23,7 @@
 
 [root@master ~]# systemctl start mysql
 
-### При установке Percona автоматически генерирует пароль длā пользователя root и кладет его в файл /var/log/mysqld.log:
+### При установке Percona автоматически генерирует пароль для пользователя root и кладет его в файл /var/log/mysqld.log:
 [root@master ~]# cat /var/log/mysqld.log | grep 'root@localhost:' | awk '{print $11}'
 0x+wt8Qn7Tgg
 
